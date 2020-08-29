@@ -14,6 +14,7 @@ public class Administration extends Employee{
         super.setSalary(23000);
         this.vacation = 5;                                                  
     }
+    
     @Override
     public String toString() {
         return super.toString() + "\t" + vacation;

@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Employee extends Person{
     private int hours;
     private int salary;
@@ -18,13 +20,28 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
-    @Override
-    public String toString() {
-        return name + "\t" + cpr + "\t" + hours + "\t" + salary +"\t";
-    }
-
     public Employee(String name, String cpr, int hours) {
         super(name, cpr);
         this.hours = hours;
+    }
+
+    public Employee() {
+    }
+
+    public void printFitnessEmployees(List<Employee> employeeList){
+        System.out.println("FITNESS EMPLOYEES");
+        System.out.println("\nNAME\tCPR\t\t\tHOURS\tSALARY\tVACATION");
+        System.out.println("************************************************");
+
+        for (Employee employee : employeeList){
+            System.out.println(employee);
+        }
+
+        System.out.println("\n"+"================================================");
+    }
+
+    @Override
+    public String toString() {
+        return super.getName() + "\t" + super.getCpr() + "\t\t" + hours + "\t" + salary;
     }
 }

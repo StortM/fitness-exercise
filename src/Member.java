@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Member extends Person {
     private boolean isBasic;
 
@@ -14,6 +16,9 @@ public class Member extends Person {
         this.isBasic = isBasic;
     }
 
+    public Member() {
+    }
+
     public String getMemberType(){
         if (isBasic){
             return "Basic";
@@ -23,13 +28,30 @@ public class Member extends Person {
         }
     }
 
-    public int MonthlyFee(){
+    public int monthlyFee(){
         if (isBasic){
             return 199;
         }
         else {
             return 299;
         }
+    }
+
+    public void printFitnessMembers(List<Member> memberList){
+        System.out.println("FITNESS MEMBERS");
+        System.out.println("\nNAME\tCPR\t\t\tMEMBER TYPE\tFEE");
+        System.out.println("************************************************");
+
+        for (Member member : memberList){
+            System.out.println(member);
+        }
+
+        System.out.println("\n"+"================================================");
+    }
+
+    @Override
+    public String toString() {
+        return super.getName() + "\t" + super.getCpr() + "\t\t" + getMemberType() + "\t" + monthlyFee();
     }
 
 }
