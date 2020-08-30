@@ -31,5 +31,11 @@ public class Main {
 
         Person person = new Person();
         person.printFitnessPersons(personList);
+
+        //reading from file
+        FileHandling fileHandling = new FileHandling();
+        ArrayList<Person> personListFromFile = fileHandling.getPeopleFromFile();
+
+        person.printFitnessPersons(personListFromFile);
     }
 }
